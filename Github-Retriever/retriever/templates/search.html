@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+<h1 class="heading2">Search for user</h1>  
+</div>
+<div class="mx-auto">
+  <form class="calibur" action="{% url 'git_app:search' %}" method="post">
+
+      {% csrf_token %}
+      <label for="git_user_form"></label>
+      <input class="gituser" type="text" name="username" placeholder="Enter User login">
+      <p></p>
+      <button  type="submit" name="button" class="btn btn-primary centre block" >Search</button>
+
+  </form>
+  </div>
+
+{% endblock%}

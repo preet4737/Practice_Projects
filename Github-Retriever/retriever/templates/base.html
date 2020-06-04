@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/master.css' %}">
+
+  </head>
+  <body>
+<nav class = "navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container_1">
+      <ul class = "navbar navbar-nav">
+        <li class="nav-item active"><a class = "nav-link" href = "{% url 'index' %}">Django</a></li>
+        <li class="nav-item active"><a class = "nav-link" href = "{% url 'admin:index' %}">Admin</a></li>
+        <li class="nav-item active"><a class = "nav-link" href = "{% url 'git_app:register' %}">Register</a></li>
+
+        {% if user.is_authenticated %}
+          <li class="nav-item active"><a class = "nav-link" href = "{% url 'git_app:search' %}">Search User</a></li>
+            <li><a class="nav-item active" class = "nav-link" href = "{% url 'git_app:user_logout' %}">Logout</a></li>
+        {% else %}
+        <li class="nav-item"><a class = "nav-link" href = "{% url 'git_app:user_login' %}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+</nav>
+<div class="container_2">
+  {% block body_block %}
+
+  {% endblock%}
+
+</div>
+  </body>
+</html>

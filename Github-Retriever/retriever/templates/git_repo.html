@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+<div >
+  <h1>The Repository Commit History</h1>
+  {% for obj in json_object_2 %}
+  <p class="bg-info text-white">
+    <ul>
+    <li> <h2><b><i>Commit Author:</i></b> {{obj.commit.author.name}}</h2></li>
+    <li> <h3><b><i>Commit Message:</i></b> {{obj.commit.message}}</h3></li>
+      <li><h4><b><i>Commit Date:</i></b> {{obj.commit.author.date}}</h4></li>
+    </ul>
+
+  <p>------------------------------------------------------------------------------------------------------------------------------</p>
+  <ul>
+    <li><h2><b><i>Committer Author:</i></b>{{obj.commit.committer.name}}</h2></li>
+    <li><h3><b><i>Committer Message:</i></b>{{obj.commit.message}}</h3></li>
+  <li><h4><b><i>Commiter Date:</i></b>{{obj.commit.committer.date}}</h4></li>
+  </ul>
+
+  <p><b>***************************************************************************************************************</b></p>
+  <p><b>***************************************************************************************************************</b></p>
+</p>
+
+
+  {% endfor %}
+</div>
+
+
+{% endblock%}

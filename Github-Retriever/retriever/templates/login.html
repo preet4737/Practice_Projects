@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+    <h1 class="heading2">Please Login</h1>
+</div>
+
+<div class="login-page">
+  <form class="mx-auto" action="{% url 'git_app:user_login'%}" method="post">
+    {% csrf_token %}
+      <label for="username"><b>USERNAME:</b></label>
+      <input type="text" name="username" placeholder="username"/>
+      <p></p>
+      <label for="password"><b>PASSWORD:</b></label>
+      <input type="password" name="password" placeholder="password"/>
+      <p></p>
+      <button type ="submit" class="btn btn-primary">Login</button>
+      {% if login_user %}
+      <p><b><i>Invalid Credentials</i></b></p>
+      {% endif %}
+      <p>Not registered? <a class="" href="{% url 'git_app:register' %}">Create an account</a></p>
+    </form>
+
+  </div>
+{% endblock %}

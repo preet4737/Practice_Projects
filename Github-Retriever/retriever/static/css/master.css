@@ -1,0 +1,62 @@
+body{
+  background-color:white;
+}
+
+.heading {
+  font-size: 55px;
+  font-family:
+  text-shadow: 35px solid black;
+  text-align: center;
+  color: #24305E;
+}
+.index{
+  font-size: 30px;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.detail{
+  padding-top: 40px;
+}
+
+.search{
+  padding-top: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 35px;
+}
+
+.container-fluid{
+  padding-bottom: 20px;
+  padding-left: 200px;
+  padding-right: 150px;
+}
+
+.row{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.jumbotron{
+  padding: 1em 1em;
+   h1 {
+       font-size: 2em;
+   }
+
+}
+
+.mx-auto{
+  margin-top: 50px;
+  width:175px;
+
+}
+
+.heading2{
+  text-align: center;
+  color: blue;
+}
+.image{
+  float: left;
+  position: absolute;
+  top: 72px;
+  right: 16px;
+}
